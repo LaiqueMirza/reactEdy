@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/reactEdy/static/css/main.bcd67d62.chunk.css",
+    "main.js": "/reactEdy/static/js/main.5209bfc0.chunk.js",
+    "main.js.map": "/reactEdy/static/js/main.5209bfc0.chunk.js.map",
+    "runtime-main.js": "/reactEdy/static/js/runtime-main.837ad412.js",
+    "runtime-main.js.map": "/reactEdy/static/js/runtime-main.837ad412.js.map",
+    "static/js/2.1df020d9.chunk.js": "/reactEdy/static/js/2.1df020d9.chunk.js",
+    "static/js/2.1df020d9.chunk.js.map": "/reactEdy/static/js/2.1df020d9.chunk.js.map",
+    "static/js/3.0ec14132.chunk.js": "/reactEdy/static/js/3.0ec14132.chunk.js",
+    "static/js/3.0ec14132.chunk.js.map": "/reactEdy/static/js/3.0ec14132.chunk.js.map",
+    "index.html": "/reactEdy/index.html",
+    "static/css/main.bcd67d62.chunk.css.map": "/reactEdy/static/css/main.bcd67d62.chunk.css.map",
+    "static/js/2.1df020d9.chunk.js.LICENSE.txt": "/reactEdy/static/js/2.1df020d9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.837ad412.js",
+    "static/js/2.1df020d9.chunk.js",
+    "static/css/main.bcd67d62.chunk.css",
+    "static/js/main.5209bfc0.chunk.js"
+  ]
+}
