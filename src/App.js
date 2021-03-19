@@ -34,9 +34,7 @@ render() {
 
 
   return (
-    <div>
-    
-                           
+    <div>               
                             
     <main>
 
@@ -66,7 +64,7 @@ render() {
                 <div id="table-data">
                     <table>
                         <tbody>
-                        {this.state.showLoader && <h1>Loading...</h1>}
+                        {this.state.showLoader && <h1>Loading....</h1>}
                         {data.map((card, index) => <Card
                               data={card}
                               keys={index}
