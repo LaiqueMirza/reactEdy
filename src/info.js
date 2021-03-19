@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Info = (props) => {
+const Info = ({userDetails}) => {
+    let props = userDetails
+    debugger;
     return (
 
         <div id="info-wrapper">

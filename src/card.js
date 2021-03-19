@@ -4,7 +4,7 @@ const Card = (props) => {
     return (
      
       <tr key={props.keys}  className="data-row"
-      onClick={() => props.selected(`${props.data.firstName}`,`${props.data.lastName}`, `${props.data.description}`,  `${props.data.address.streetAddress}`, `${props.data.address.city}`, `${props.data.address.state}`, `${props.data.address.zip}`)}
+      onClick={() => props.selected(props.keys)}
       >
          {/* 
         address: {streetAddress: "5268 Quis St", city: "Pittsburg", state: "SC", zip: "59428"}

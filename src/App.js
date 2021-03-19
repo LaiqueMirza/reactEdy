@@ -10,6 +10,7 @@ class App extends Component {
     super(props);
     this.state = {
       data: [],
+      currentIndex:0,
       showLoader:true,
       showInfo: false,
       firstName:null,
@@ -30,14 +31,13 @@ componentDidMount() {
 }
 
 render() {
-  let { data } = this.state
-
+  let { data, currentIndex } = this.state
 
   return (
     <div>               
-                            
+      {data && data.length &&                      
     <main>
-
+      
         <div id="table-section">
 
             <form action="/">
@@ -69,17 +69,8 @@ render() {
                               data={card}
                               keys={index}
                               selected={
-                                  (pfirstName,plastName,pdescription,pstreetAddress,pzip,pcity,pstate) =>
-                                    this.setState({
-                                      firstName:pfirstName,
-                                      lastName:plastName,
-                                      description:pdescription,
-                                      streetAddress:pstreetAddress,
-                                      zip:pzip,
-                                      city:pcity,
-                                      state:pstate,
-                                      showInfo:true})
-                                }
+                                (data) => this.setState({currentIndex: data})
+                              }
                             />)
                             }
 
@@ -93,18 +84,11 @@ render() {
 
 
         <Info 
-        display={this.state.showInfo} 
-        firstName={this.state.firstName}
-        lastName={this.state.lastName}
-        description={this.state.description}
-        streetAddress={this.state.streetAddress}
-        zip={this.state.zip}
-        city={this.state.city}
-        state={this.state.state}
+          userDetails={data[currentIndex]}        
         />
 
     </main>
-
+  }
 </div>
     );
 }
