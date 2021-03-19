@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Card from './card';
+import Info from './info';
 import React, { Component, } from 'react';
 import './App.css';
 const url = 'http://www.filltext.com/?rows=32&id=%7Bnumber%7C1000%7D&firstName=%7BfirstName%7D&lastName=%7BlastName%7D&email=%7Bemail%7D&phone=%7Bphone%7C(xxx)xxx-xx-xx%7D&address=%7BaddressObject%7D&description=%7Blorem%7C32%7D';
@@ -9,20 +10,29 @@ class App extends Component {
     super(props);
     this.state = {
       data: [],
-      showLoader:true
+      showLoader:true,
+      showInfo: false,
+      firstName:null,
+      lastName:null,
+      description:null,
+      streetAddress:null,
+      zip:null,
+      city:null,
+      state:null,
+      
     }
   }
 
 componentDidMount() {
   axios.get(url).then(res => 
-    this.setState({data: res.data})
+    this.setState({data: res.data, showLoader:false})
   )
 }
 
 render() {
-  console.log(this.state.data)
   let { data } = this.state
-  
+
+
   return (
     <div>
     
@@ -56,15 +66,24 @@ render() {
                 <div id="table-data">
                     <table>
                         <tbody>
-                            
+                        {this.state.showLoader && <h1>Loading...</h1>}
                         {data.map((card, index) => <Card
                               data={card}
-                              key={index}
-                            //   selected={
-                            //       (data) =>
-
-                            //   }
-                            />)}
+                              keys={index}
+                              selected={
+                                  (pfirstName,plastName,pdescription,pstreetAddress,pzip,pcity,pstate) =>
+                                    this.setState({
+                                      firstName:pfirstName,
+                                      lastName:plastName,
+                                      description:pdescription,
+                                      streetAddress:pstreetAddress,
+                                      zip:pzip,
+                                      city:pcity,
+                                      state:pstate,
+                                      showInfo:true})
+                                }
+                            />)
+                            }
 
                         </tbody>
                     </table>
@@ -75,24 +94,16 @@ render() {
         </div>
 
 
-
-        <div id="info-wrapper">
-            <h1>Details</h1>
-            <p>Click on a table item to get detailed information</p>
-            <div id="info-content">
-                <div><b>User selected:</b> Marcellin Shrestha</div>
-                <div>
-                    <b>Description: </b>
-                    <textarea cols="50" rows="5" readonly>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, quia nihil. Est, illum minima libero rerum, nihil distinctio placeat sint nam quae repellendus obcaecati delectus totam non odio. Sint, reprehenderit?
-                    </textarea>
-                </div>
-                <div><b>Address:</b> 6480 Nec Ct</div>
-                <div><b>City:</b> Dinwiddie</div>
-                <div><b>State:</b> NV</div>
-                <div><b>Zip:</b> 91295</div>
-            </div>
-        </div>
+        <Info 
+        display={this.state.showInfo} 
+        firstName={this.state.firstName}
+        lastName={this.state.lastName}
+        description={this.state.description}
+        streetAddress={this.state.streetAddress}
+        zip={this.state.zip}
+        city={this.state.city}
+        state={this.state.state}
+        />
 
     </main>
 
