@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/reactEdy/static/css/main.b63c1cc0.chunk.css",
-    "main.js": "/reactEdy/static/js/main.631eceea.chunk.js",
-    "main.js.map": "/reactEdy/static/js/main.631eceea.chunk.js.map",
+    "main.js": "/reactEdy/static/js/main.0f5694fe.chunk.js",
+    "main.js.map": "/reactEdy/static/js/main.0f5694fe.chunk.js.map",
     "runtime-main.js": "/reactEdy/static/js/runtime-main.837ad412.js",
     "runtime-main.js.map": "/reactEdy/static/js/runtime-main.837ad412.js.map",
     "static/js/2.1df020d9.chunk.js": "/reactEdy/static/js/2.1df020d9.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.837ad412.js",
     "static/js/2.1df020d9.chunk.js",
     "static/css/main.b63c1cc0.chunk.css",
-    "static/js/main.631eceea.chunk.js"
+    "static/js/main.0f5694fe.chunk.js"
   ]
 }
